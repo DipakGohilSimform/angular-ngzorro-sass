@@ -1,0 +1,41 @@
+.ant-input-affix-wrapper.ant-input-affix-wrapper,
+.ant-input-group.ant-input-group {
+  &.ant-input-affix-wrapper,
+  &.ant-input-group {
+    width: 100%;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px 14px;
+    height: 44px;
+    background: rgb(var(--bg-primary));
+    border: 1px solid rgb(var(--gray-300));
+    margin-bottom: 14px;
+    transition: all 0.3s ease;
+    input {
+      width: 100%;
+      outline: none;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: rgb(var(--gray-500));
+      background: rgb(var(--bg-primary));
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: rgb(var(--gray-400));
+      }
+    }
+    &.ant-input-affix-wrapper-focused,
+    &.cdk-focused {
+      border-color: rgb(var(--brand-200));
+      box-shadow: 0px 0px 0px 4px rgba(var(--brand-600), 0.1);
+    }
+    .ant-input-prefix {
+      display: none;
+    }
+    &:hover {
+      border-color: rgb(var(--brand-200));
+    }
+  }
+}

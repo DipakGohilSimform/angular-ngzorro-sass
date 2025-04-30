@@ -1,0 +1,42 @@
+.ant-btn {
+  &.ant-btn {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+    span {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      color: inherit;
+    }
+
+    // --------- Primary Button Styles ------
+    &.ant-btn-primary {
+      background-color: rgb(var(--brand-600));
+      color: rgb(var(--white));
+      &:hover,
+      &:active {
+        background-color: rgb(var(--brand-700));
+        border-color: rgb(var(--brand-700));
+      }
+    }
+
+    // -------- Default Button Styles ------
+    &.ant-btn-default {
+      background-color: transparent;
+      border: 1px solid rgb(var(--gray-300));
+      color: rgb(var(--gray-700));
+      &:hover,
+      &:active {
+        background-color: rgb(var(--gray-50));
+        border-color: rgb(var(--gray-300));
+        color: rgb(var(--gray-800));
+      }
+    }
+  }
+}

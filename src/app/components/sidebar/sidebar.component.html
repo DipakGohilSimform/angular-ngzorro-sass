@@ -1,0 +1,63 @@
+<nz-sider nzWidth="270px">
+  <div class="logo">
+    <a href="#"><img src="/assets/images/logo.svg" alt="logo" /></a>
+  </div>
+  <div class="sidebar-menu-block">
+    <ul nz-menu nzMode="inline" class="sidebar-menu">
+      <li
+        class="text s-16 fw-600"
+        nz-menu-item
+        routerLink="/dashboard/"
+        routerLinkActive="ant-menu-item-selected"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <svg-icon src="/assets/icon/home-ico.svg" class="icon s-12"></svg-icon>
+        <span>Dashboard</span>
+      </li>
+      <li
+        class="text s-16 fw-600"
+        nz-menu-item
+        routerLink="/dashboard/analytics"
+        routerLinkActive="ant-menu-item-selected">
+        <svg-icon
+          src="/assets/icon/activity-dashboard-ico.svg"
+          class="icon s-12"></svg-icon>
+        <span>Analytics</span>
+      </li>
+      <li class="text s-16 fw-600" nz-menu-item>
+        <svg-icon
+          src="/assets/icon/manage-setting-ico.svg"
+          class="icon s-12"></svg-icon>
+        <span>Settings</span>
+      </li>
+      <li class="text s-16 fw-600" nz-menu-item>
+        <svg-icon
+          src="/assets/icon/report-ico.svg"
+          class="icon s-12"></svg-icon>
+        <span>Documentation</span>
+      </li>
+    </ul>
+    <div>
+      <ul nz-menu nzMode="inline" class="sidebar-menu sidebar-menu-bottom">
+        <li class="text s-16 fw-600" nz-menu-item routerLink="/auth/login">
+          <svg-icon
+            src="/assets/icon/logout-ico.svg"
+            class="icon s-12"></svg-icon>
+          <span>Logout</span>
+        </li>
+      </ul>
+
+      <div class="user-info-card">
+        <div><img src="/assets/images/avatar.png" alt="user-avatar" /></div>
+        <div class="user-info text s-14">
+          <div class="user-name fw-600">John Doe</div>
+          <div class="user-designation fw-400">VEC AutismPro</div>
+        </div>
+        <div class="notification">
+          <svg-icon
+            src="/assets/icon/icon-notification-gray.svg"
+            class="icon s-24"></svg-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</nz-sider>

@@ -1,0 +1,110 @@
+.ant-layout-sider {
+  padding: 24px 16px;
+  background: rgb(var(--bg-primary));
+  border-right: 1px solid rgb(var(--gray-200));
+  position: fixed;
+  left: 0;
+  overflow: auto;
+  height: 100%;
+  z-index: 100;
+  .ant-layout-sider-children {
+    height: 100%;
+  }
+
+  ::ng-deep .ant-menu-title-content {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    padding-inline: 12px;
+    margin-bottom: 24px;
+    img {
+      width: 170px;
+      height: auto;
+    }
+  }
+  .sidebar-menu-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 95px);
+  }
+  .sidebar-menu {
+    margin: 0;
+    background: transparent;
+    border: 0;
+    li {
+      margin-bottom: 4px;
+      padding: 8px 12px;
+      color: rgb(var(--gray-600));
+      align-items: center;
+      cursor: pointer;
+      border-radius: 6px;
+      .icon {
+        margin-right: 12px;
+      }
+      .ant-menu-submenu-title {
+        padding: 0 !important;
+        line-height: normal;
+        height: auto;
+        justify-content: flex-start;
+      }
+    }
+    &.sidebar-menu-bottom {
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgb(var(--gray-200));
+    }
+  }
+  .user-info-card {
+    display: flex;
+    margin-top: 24px;
+    padding: 12px;
+    border-radius: 8px;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    .user-info {
+      margin: 0 17px 0 12px;
+      color: rgb(var(--gray-700));
+      .user-designation {
+        color: rgb(var(--gray-600));
+      }
+    }
+    &:hover {
+      background-color: rgb(var(--brand-600));
+      .user-info {
+        color: rgb(var(--white));
+        .user-designation {
+          color: rgb(var(--white));
+        }
+      }
+    }
+  }
+  .ant-menu-item-selected {
+    background-color: rgb(var(--brand-600));
+  }
+  .ant-menu-item:active {
+    background-color: rgb(var(--brand-600));
+  }
+  .ant-menu-inline {
+    &.ant-menu-root {
+      .ant-menu-item {
+        padding-left: 12px !important;
+        &.ant-menu-item-selected {
+          background-color: rgb(var(--brand-600));
+          color: rgb(var(--white));
+          .icon {
+            svg {
+              path {
+                stroke: rgb(var(--white));
+              }
+            }
+          }
+        }
+        &::after {
+          border: 0;
+        }
+      }
+    }
+  }
+}

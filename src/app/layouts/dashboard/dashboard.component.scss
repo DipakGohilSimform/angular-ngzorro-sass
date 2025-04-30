@@ -1,0 +1,11 @@
+.main-container {
+  min-height: 100vh;
+  .main-layout {
+    margin-left: 270px;
+
+    .ant-layout-content {
+      margin-top: 88px;
+      background-color: rgb(var(--gray-50));
+    }
+  }
+}

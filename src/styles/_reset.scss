@@ -1,0 +1,58 @@
+// _reset.scss
+
+/* Reset margins, paddings, and borders */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Remove default font sizes */
+html,
+body {
+  font-size: 100%;
+  line-height: 1.6;
+}
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset table layout */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Reset form elements */
+input,
+textarea,
+button,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Reset buttons */
+button {
+  cursor: pointer;
+  background: transparent;
+}
+
+/* Reset images */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

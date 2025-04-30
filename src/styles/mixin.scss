@@ -1,0 +1,75 @@
+$spacing-scale: (
+  0: 0px,
+  6: 6px,
+  8: 8px,
+  16: 16px,
+  18: 18px,
+  20: 20px,
+  24: 24px,
+  40: 40px,
+);
+$font-size: (
+  16: 16px,
+  24: 24px,
+  20: 20px,
+);
+$breakpoints: (
+  xs: 575px,
+  sm: 767px,
+  md: 991px,
+  lg: 1199px,
+  xl: 1600px,
+);
+
+@mixin generate-font-size() {
+  @each $key, $value in $font-size {
+    .fs-#{$key} {
+      font-size: #{$value} !important;
+    }
+  }
+}
+
+@mixin media($breakpoint) {
+  $mix-width: map-get($breakpoints, $breakpoint);
+
+  @if $mix-width {
+    @media (max-width: #{$mix-width}) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in the map.";
+  }
+}
+
+$spacing-scale: (
+  0: 0px,
+  6: 6px,
+  8: 8px,
+  16: 16px,
+  18: 18px,
+  20: 20px,
+  24: 24px,
+  40: 40px,
+);
+
+@mixin generate-margin-classes() {
+  @each $key, $value in $spacing-scale {
+    .mt-#{$key} {
+      margin-top: #{$value} !important;
+    }
+    .mr-#{$key} {
+      margin-right: #{$value} !important;
+    }
+    .mb-#{$key} {
+      margin-bottom: #{$value} !important;
+    }
+    .ml-#{$key} {
+      margin-left: #{$value} !important;
+    }
+    .m-#{$key} {
+      margin: #{$value} !important;
+    }
+  }
+}
+
+@include generate-margin-classes();

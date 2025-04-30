@@ -1,0 +1,1461 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "User",
+            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "file": "src/app/components/stories/user.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "ThemeService",
+            "id": "injectable-ThemeService-f3f688363e5b52a90e48dadc9c2857a007df34ce1ad0348370e322392097bc6096a617abc67f6df1396adecbe4213dc3822e8394f32babaa61419cd99213b872",
+            "file": "src/services/theme.service.ts",
+            "properties": [
+                {
+                    "name": "currentTheme",
+                    "defaultValue": "ThemeType.Default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "renderer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Renderer2",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "loadCss",
+                    "args": [
+                        {
+                            "name": "href",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<Event>",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "href",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "loadTheme",
+                    "args": [
+                        {
+                            "name": "firstLoad",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "true"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<Event>",
+                    "typeParameters": [],
+                    "line": 67,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "firstLoad",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "true",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "removeUnusedTheme",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "ThemeType",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "ThemeType",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "reverseTheme",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "ThemeType",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleTheme",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<Event>",
+                    "typeParameters": [],
+                    "line": 86,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { map, catchError } from 'rxjs/operators';\n\nenum ThemeType {\n  Dark = 'dark',\n  Default = 'default',\n}\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ThemeService {\n  private currentTheme = ThemeType.Default;\n  private renderer: Renderer2;\n\n  constructor(rendererFactory: RendererFactory2) {\n    this.renderer = rendererFactory.createRenderer(null, null);\n  }\n\n  private reverseTheme(theme: string): ThemeType {\n    return theme === ThemeType.Dark ? ThemeType.Default : ThemeType.Dark;\n  }\n\n  private removeUnusedTheme(theme: ThemeType): void {\n    this.renderer.removeClass(document.documentElement, theme);\n    try {\n      const removedThemeStyle = this.renderer.selectRootElement(\n        `#${theme}`,\n        true\n      );\n      if (removedThemeStyle) {\n        this.renderer.removeChild(document.head, removedThemeStyle);\n      }\n    } catch {\n      //console.warn('')\n    }\n  }\n\n  private loadCss(href: string, id: string): Observable<Event> {\n    return new Observable<Event>(observer => {\n      const style = this.renderer.createElement('link');\n      this.renderer.setAttribute(style, 'rel', 'stylesheet');\n      this.renderer.setAttribute(style, 'href', href);\n      this.renderer.setAttribute(style, 'id', id);\n\n      style.onload = (event: Event) => {\n        observer.next(event);\n        observer.complete();\n      };\n      style.onerror = () => {\n        observer.error();\n      };\n      const faviconLink = document.querySelector('link[rel=\"icon\"]');\n      if (faviconLink && faviconLink.parentNode) {\n        this.renderer.insertBefore(\n          faviconLink.parentNode,\n          style,\n          faviconLink.nextSibling\n        );\n      } else {\n        this.renderer.appendChild(document.head, style);\n      }\n    });\n  }\n\n  public loadTheme(firstLoad = true): Observable<Event> {\n    const theme = this.currentTheme;\n    if (firstLoad) {\n      this.renderer.addClass(document.documentElement, theme);\n    }\n    return this.loadCss(`${theme}.css`, theme).pipe(\n      map((event: Event) => {\n        if (!firstLoad) {\n          this.renderer.addClass(document.documentElement, theme);\n        }\n        this.removeUnusedTheme(this.reverseTheme(theme));\n        return event;\n      }),\n      catchError(error => {\n        throw new Error(`Failed to load theme: ${error}`);\n      })\n    );\n  }\n\n  public toggleTheme(): Observable<Event> {\n    this.currentTheme = this.reverseTheme(this.currentTheme);\n    return this.loadTheme(false);\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "rendererFactory",
+                        "type": "RendererFactory2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "rendererFactory",
+                        "type": "RendererFactory2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AnalyticsComponent",
+            "id": "component-AnalyticsComponent-568ed1169edb9d84436751f8b4f5d6c9f8d97d0d58803914e2a83d7db3898139b125915b85a8764085c4814b42d921070d9660c81d8e478b7f3acd70e4fd742a",
+            "file": "src/app/pages/analytics/analytics.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-analytics",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./analytics.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-analytics',\n  standalone: true,\n  imports: [],\n  templateUrl: './analytics.component.html',\n  styleUrl: './analytics.component.scss',\n})\nexport class AnalyticsComponent {}\n",
+            "styleUrl": "./analytics.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<h1 class=\"title s-18 fw-600 m-16\">Analytics works!</h1>\n"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-26d2f35a5a7c84b0faa1896e4d0a91fc5ba158398de02e272267d3bf76f91aa76df7bcd8f3bc4ea768c8dffa58cb72eda9e937b19d24c9cee6de11ed7e1be49e",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{ provide: NZ_I18N, useValue: en_US }"
+                }
+            ],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'angular-ngzorro-sass'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { NzI18nService, NZ_I18N, en_US } from 'ng-zorro-antd/i18n';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [RouterOutlet],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss',\n  providers: [{ provide: NZ_I18N, useValue: en_US }],\n})\nexport class AppComponent {\n  title = 'angular-ngzorro-sass';\n  constructor(private i18n: NzI18nService) {\n    this.i18n.setLocale(en_US);\n  }\n}\n",
+            "styleUrl": "./app.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "i18n",
+                        "type": "NzI18nService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "i18n",
+                        "type": "NzI18nService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<router-outlet></router-outlet>\n"
+        },
+        {
+            "name": "AuthComponent",
+            "id": "component-AuthComponent-d167ccaacc7cce263309600c289b638468ddf9947384340bc5759a2deb2e8bc05e7fb4c421ff3e11e5de82e02145d66f4b608b763a8a67eed9c0678834952440",
+            "file": "src/app/layouts/auth/auth.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-auth",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./auth.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "NzLayoutModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { NzLayoutModule } from 'ng-zorro-antd/layout';\nimport { RouterOutlet } from '@angular/router';\n\n@Component({\n  selector: 'app-auth',\n  standalone: true,\n  imports: [RouterOutlet, NzLayoutModule],\n  templateUrl: './auth.component.html',\n  styleUrl: './auth.component.scss',\n})\nexport class AuthComponent {}\n",
+            "styleUrl": "./auth.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<nz-layout class=\"auth-container\">\n  <nz-content>\n    <aside class=\"aside\"></aside>\n    <div class=\"content\">\n      <router-outlet></router-outlet>\n    </div>\n  </nz-content>\n</nz-layout>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-d2cb4f3d89f818722d951f2db09470e634315599d309e22e7efa0bdc1708e422338377f75c7a2e8759eb7d183b36eb115e5aa02817491f464dc7a6b1b73b25c5",
+            "file": "src/app/components/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"doClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\">\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 637,
+                            "end": 650,
+                            "kind": 327,
+                            "id": 0,
+                            "flags": 16842752,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "tagName": {
+                                "pos": 638,
+                                "end": 646,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "doClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'app-storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n    type=\"button\"\n    (click)=\"doClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\">\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  @Input()\n  primary = false;\n\n  @Input()\n  backgroundColor?: string;\n\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  @Output()\n  doClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary\n      ? 'storybook-button--primary'\n      : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-button--primary {\n  background-color: #1ea7fd;\n  color: white;\n}\n\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 38
+                    }
+                }
+            }
+        },
+        {
+            "name": "DashboardComponent",
+            "id": "component-DashboardComponent-d3daf1ee79eca0f654d85cc89bfde6a16a7154a5fc05176cb47324ada3ce248d1f53ed91f324a2d48217076970a7a73707cf38dbba32606acf2cf9c720b257f0",
+            "file": "src/app/layouts/dashboard/dashboard.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dashboard",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./dashboard.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "NzLayoutModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SidebarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { NzLayoutModule } from 'ng-zorro-antd/layout';\nimport { SidebarComponent } from '../../components/sidebar/sidebar.component';\nimport { HeaderComponent } from '../../components/header/header.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [RouterOutlet, NzLayoutModule, SidebarComponent, HeaderComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {}\n",
+            "styleUrl": "./dashboard.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<nz-layout class=\"main-container\">\n  <app-sidebar />\n  <nz-layout class=\"main-layout\">\n    <app-header />\n    <nz-content>\n      <router-outlet></router-outlet>\n    </nz-content>\n  </nz-layout>\n</nz-layout>\n"
+        },
+        {
+            "name": "ForgotPasswordComponent",
+            "id": "component-ForgotPasswordComponent-f2930348f4cfd521fcbeaac596effbffeae938847ab144e09a51c801ffa5e70a43fe7ce2f7d694145e86a5ab430a065265f1529d12d548b21d6022a5cb95bec3",
+            "file": "src/app/pages/forgot-password/forgot-password.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-forgot-password",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./forgot-password.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NzFormControlComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzInputGroupComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzFormItemComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzFormLabelComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "AngularSvgIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "NzToolTipModule",
+                    "type": "module"
+                },
+                {
+                    "name": "NzSelectModule",
+                    "type": "module"
+                },
+                {
+                    "name": "NzIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "RouterModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\nimport { NzButtonComponent } from 'ng-zorro-antd/button';\nimport { NzToolTipModule } from 'ng-zorro-antd/tooltip';\nimport {\n  NzFormControlComponent,\n  NzFormItemComponent,\n  NzFormLabelComponent,\n} from 'ng-zorro-antd/form';\nimport { NzInputGroupComponent } from 'ng-zorro-antd/input';\nimport { NzSelectModule } from 'ng-zorro-antd/select';\nimport { NzIconModule } from 'ng-zorro-antd/icon';\nimport { RouterModule } from '@angular/router';\n\n@Component({\n  selector: 'app-forgot-password',\n  standalone: true,\n  imports: [\n    NzFormControlComponent,\n    NzInputGroupComponent,\n    NzFormItemComponent,\n    NzButtonComponent,\n    NzFormLabelComponent,\n    AngularSvgIconModule,\n    NzToolTipModule,\n    NzSelectModule,\n    NzIconModule,\n    RouterModule,\n  ],\n  encapsulation: ViewEncapsulation.None,\n  templateUrl: './forgot-password.component.html',\n  styleUrl: './forgot-password.component.scss',\n})\nexport class ForgotPasswordComponent {}\n",
+            "styleUrl": "./forgot-password.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<ng-template #suffixTemplateInfo>\n  <i\n    nz-icon\n    nzType=\"info-circle\"\n    nz-tooltip=\"\"\n    nzTooltipTitle=\"Your username is your email address\"></i>\n</ng-template>\n<div class=\"auth-container\">\n  <div class=\"form-container\">\n    <div class=\"form-header\">\n      <img src=\"/assets/images/logo.svg\" class=\"form-logo\" alt=\"logo\" />\n    </div>\n    <form nz-form class=\"form\" nzLayout=\"vertical\">\n      <div class=\"mb-20\">\n        <h1 class=\"title s-30 mb-16 text-center\">Forgot password?</h1>\n        <p class=\"text s-14 text-center\">\n          No worries, we'll send you reset instructions.\n        </p>\n      </div>\n      <nz-form-item>\n        <nz-form-label nzFor=\"email\">Username</nz-form-label>\n        <nz-form-control nzErrorTip=\"Please input your email!\">\n          <nz-input-group [nzSuffix]=\"suffixTemplateInfo\">\n            <div class=\"input-wrapper\">\n              <input\n                name=\"warningValid\"\n                type=\"text\"\n                nz-input\n                id=\"email\"\n                formControlName=\"email\"\n                placeholder=\"Enter username\" />\n            </div>\n          </nz-input-group>\n        </nz-form-control>\n      </nz-form-item>\n      <button\n        type=\"button\"\n        nz-button\n        [nzBlock]=\"true\"\n        class=\"form-button\"\n        [nzType]=\"'primary'\">\n        Reset password\n      </button>\n    </form>\n    <a class=\"back-link\" [routerLink]=\"'/login'\">\n      <svg-icon src=\"/assets/icon/icon-arrow.svg\" class=\"icon s-12\"></svg-icon>\n      Back to sign in\n    </a>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-4db6b93bba19efb018deba3a77a8598681af73678d4589cf636588f76becfcdefd25bd9a2cbdd55d108b562452f5d963c3bf6cd3929f556288781321c6211570",
+            "file": "src/app/components/header/header.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isScrolled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onWindowScroll",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:scroll', undefined"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "openGithubRepo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "window:scroll",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24
+                }
+            ],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NzPageHeaderModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "NzButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzDrawerModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostListener, ViewEncapsulation } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { NzButtonComponent } from 'ng-zorro-antd/button';\nimport { NzDrawerModule } from 'ng-zorro-antd/drawer';\nimport { NzPageHeaderModule } from 'ng-zorro-antd/page-header';\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  imports: [\n    NzPageHeaderModule,\n    CommonModule,\n    NzButtonComponent,\n    NzDrawerModule,\n  ],\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n  encapsulation: ViewEncapsulation.None,\n})\nexport class HeaderComponent {\n  public isScrolled = false;\n\n  @HostListener('window:scroll', [])\n  onWindowScroll(): void {\n    this.isScrolled = window.scrollY > 0;\n  }\n  openGithubRepo(): void {\n    window.open(\n      'https://github.com/DipakGohilSimform/angular-ngzorro-styled',\n      '_blank'\n    );\n  }\n}\n",
+            "styleUrl": "./header.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"site-page-header-ghost-wrapper\">\n  <nz-page-header [ngClass]=\"{ 'scrolled-header': isScrolled }\">\n    <nz-page-header-title>Home</nz-page-header-title>\n    <nz-page-header-extra>\n      <button nz-button nzType=\"primary\" (click)=\"openGithubRepo()\">\n        Docs\n      </button>\n    </nz-page-header-extra>\n  </nz-page-header>\n</div>\n"
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-e8a288dc4ddca345f2c757d15ed71e512e1ba0588807f9a5eeabadc6a65574493f7283c5cd383ffcdf9ddf2687f6f32e6d6146fbc194576e51da3b705e47312e",
+            "file": "src/app/pages/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "currentTheme",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setTheme",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleTheme",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterModule",
+                    "type": "module"
+                },
+                {
+                    "name": "NzButtonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { NzButtonModule } from 'ng-zorro-antd/button';\nimport { ThemeService } from '../../../services/theme.service';\n\n@Component({\n  selector: 'app-home',\n  standalone: true,\n  imports: [RouterModule, NzButtonModule],\n  templateUrl: './home.component.html',\n  styleUrl: './home.component.scss',\n})\nexport class HomeComponent implements OnInit {\n  currentTheme = 'default';\n\n  constructor(private themeService: ThemeService) {}\n\n  ngOnInit(): void {\n    // Check if there's a saved theme preference\n    const savedTheme = localStorage.getItem('theme') || 'default';\n    this.currentTheme = savedTheme;\n    document.body.classList.add(this.currentTheme);\n  }\n\n  setTheme(theme: string): void {\n    document.body.classList.remove(this.currentTheme);\n    this.currentTheme = theme;\n    document.body.classList.add(this.currentTheme);\n    localStorage.setItem('theme', theme);\n  }\n\n  toggleTheme(): void {\n    const newTheme = this.currentTheme === 'default' ? 'dark' : 'default';\n    this.setTheme(newTheme);\n  }\n}\n",
+            "styleUrl": "./home.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "themeService",
+                        "type": "ThemeService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "themeService",
+                        "type": "ThemeService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"home-container\">\n  <div class=\"home-header text-center\">\n    <h1 class=\"title s-36 fw-600\">Angular Boilerplate</h1>\n    <p class=\"text s-16 fw-400\">\n      A starter template for building modern Angular applications.\n    </p>\n  </div>\n\n  <div class=\"logo-wrapper\">\n    <img src=\"/assets/images/ng-zorro.png\" alt=\"logo\" class=\"logo\" />\n    <img src=\"/assets/images/sass.png\" alt=\"logo\" class=\"logo\" width=\"200\" />\n  </div>\n\n  <div class=\"home-footer text-center mb-20\">\n    <p class=\"text s-14 fw-400\">\n      Built with\n      <a href=\"https://ng.ant.design/docs/introduce/en\" target=\"_blank\">\n        <span class=\"fw-600\">NG-ZORRO</span>\n      </a>\n      and\n      <a href=\"https://sass-lang.com/\" target=\"_blank\">\n        <span class=\"fw-600\">SASS</span> </a\n      >.\n    </p>\n  </div>\n\n  <div class=\"button-container\">\n    <button\n      nz-button\n      [nzType]=\"currentTheme === 'dark' ? 'primary' : 'default'\"\n      (click)=\"setTheme('dark')\">\n      Dark\n    </button>\n    <button\n      nz-button\n      [nzType]=\"currentTheme === 'dark' ? 'default' : 'primary'\"\n      (click)=\"setTheme('default')\">\n      Light\n    </button>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "LoginComponent",
+            "id": "component-LoginComponent-90a38d3acb225d2fc27ffa867d2df3daf93db02413f486fb9620c973346caf3c763aa2f9034210f2baf5ad9eff7deced71ff4c4ac83d48f423832eb66bcb89f5",
+            "file": "src/app/pages/login/login.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-login",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./login.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "password",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "passwordVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "router",
+                    "defaultValue": "inject(Router)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSubmit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NzFormControlComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzInputGroupComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzFormItemComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzCheckboxComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzFormLabelComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NzIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "RouterModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, inject, ViewEncapsulation } from '@angular/core';\nimport { Router, RouterModule } from '@angular/router';\nimport { NzButtonComponent } from 'ng-zorro-antd/button';\nimport { NzCheckboxComponent } from 'ng-zorro-antd/checkbox';\nimport {\n  NzFormControlComponent,\n  NzFormItemComponent,\n  NzFormLabelComponent,\n} from 'ng-zorro-antd/form';\nimport { NzIconModule } from 'ng-zorro-antd/icon';\nimport { NzInputGroupComponent } from 'ng-zorro-antd/input';\n\n@Component({\n  selector: 'app-login',\n  standalone: true,\n  imports: [\n    NzFormControlComponent,\n    NzInputGroupComponent,\n    NzFormItemComponent,\n    NzButtonComponent,\n    NzCheckboxComponent,\n    NzFormLabelComponent,\n    NzIconModule,\n    RouterModule,\n  ],\n  encapsulation: ViewEncapsulation.None,\n  templateUrl: './login.component.html',\n  styleUrl: './login.component.scss',\n})\nexport class LoginComponent {\n  private readonly router = inject(Router);\n  passwordVisible = false;\n  password?: string;\n  onSubmit(): void {\n    this.router.navigate(['/dashboard']);\n  }\n}\n",
+            "styleUrl": "./login.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"auth-container\">\n  <div class=\"form-container\">\n    <div class=\"form-header\">\n      <img src=\"/assets/images/logo.svg\" class=\"form-logo\" alt=\"logo\" />\n    </div>\n    <form nz-form class=\"form\" nzLayout=\"vertical\">\n      <div class=\"mb-20\">\n        <h1 class=\"title s-30 mb-16 text-center\">Log in to your account</h1>\n        <p class=\"text s-14 text-center\">\n          Welcome back! Please enter your details.\n        </p>\n      </div>\n      <nz-form-item>\n        <nz-form-label nzFor=\"email\">Email</nz-form-label>\n        <nz-form-control nzErrorTip=\"Please input your email!\">\n          <nz-input-group>\n            <input\n              name=\"warningValid\"\n              type=\"text\"\n              nz-input\n              id=\"email\"\n              formControlName=\"email\"\n              placeholder=\"Enter your email\" />\n          </nz-input-group>\n        </nz-form-control>\n      </nz-form-item>\n      <nz-form-item>\n        <nz-form-control nzErrorTip=\"Please input your Password!\">\n          <nz-form-label nzFor=\"password\">Password</nz-form-label>\n          <nz-input-group [nzSuffix]=\"suffixTemplate\">\n            <input\n              [type]=\"passwordVisible ? 'text' : 'password'\"\n              nz-input\n              placeholder=\"Enter your password\" />\n          </nz-input-group>\n          <ng-template #suffixTemplate>\n            <span\n              nz-icon\n              [nzType]=\"passwordVisible ? 'eye-invisible' : 'eye'\"\n              (click)=\"passwordVisible = !passwordVisible\"\n              (keydown.enter)=\"passwordVisible = !passwordVisible\"\n              (keydown.space)=\"passwordVisible = !passwordVisible\"\n              role=\"button\"\n              tabindex=\"0\"\n              aria-label=\"Toggle password visibility\"\n              style=\"cursor: pointer\"></span>\n          </ng-template>\n        </nz-form-control>\n      </nz-form-item>\n      <div nz-row class=\"remember-me\">\n        <div class=\"left\">\n          <span nz-checkbox>Remember me?</span>\n        </div>\n        <div class=\"right\">\n          <a class=\"login-form-forgot\" [routerLink]=\"'/auth/forgot-password'\">\n            Forgot password\n          </a>\n        </div>\n      </div>\n      <button\n        type=\"button\"\n        nz-button\n        [nzBlock]=\"true\"\n        class=\"form-button\"\n        nzType=\"primary\"\n        (click)=\"onSubmit()\">\n        Log in\n      </button>\n    </form>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "SidebarComponent",
+            "id": "component-SidebarComponent-5f15d64422fc6e24b78e78dd91abd015bc8fa2b5b538e6f9991e13a58b69e412e0f7cecf3273921de7a1baabccccbbac5881adca7471251acd7db9dd19652f65",
+            "file": "src/app/components/sidebar/sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./sidebar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "AngularSvgIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "NzLayoutModule",
+                    "type": "module"
+                },
+                {
+                    "name": "NzMenuModule",
+                    "type": "module"
+                },
+                {
+                    "name": "NzIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "RouterModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\nimport { NzIconModule } from 'ng-zorro-antd/icon';\nimport { NzLayoutModule } from 'ng-zorro-antd/layout';\nimport { NzMenuModule } from 'ng-zorro-antd/menu';\n\n@Component({\n  selector: 'app-sidebar',\n  standalone: true,\n  imports: [\n    AngularSvgIconModule,\n    NzLayoutModule,\n    NzMenuModule,\n    NzIconModule,\n    RouterModule,\n  ],\n  templateUrl: './sidebar.component.html',\n  styleUrl: './sidebar.component.scss',\n})\nexport class SidebarComponent {}\n",
+            "styleUrl": "./sidebar.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<nz-sider nzWidth=\"270px\">\n  <div class=\"logo\">\n    <a href=\"#\"><img src=\"/assets/images/logo.svg\" alt=\"logo\" /></a>\n  </div>\n  <div class=\"sidebar-menu-block\">\n    <ul nz-menu nzMode=\"inline\" class=\"sidebar-menu\">\n      <li\n        class=\"text s-16 fw-600\"\n        nz-menu-item\n        routerLink=\"/dashboard/\"\n        routerLinkActive=\"ant-menu-item-selected\"\n        [routerLinkActiveOptions]=\"{ exact: true }\">\n        <svg-icon src=\"/assets/icon/home-ico.svg\" class=\"icon s-12\"></svg-icon>\n        <span>Dashboard</span>\n      </li>\n      <li\n        class=\"text s-16 fw-600\"\n        nz-menu-item\n        routerLink=\"/dashboard/analytics\"\n        routerLinkActive=\"ant-menu-item-selected\">\n        <svg-icon\n          src=\"/assets/icon/activity-dashboard-ico.svg\"\n          class=\"icon s-12\"></svg-icon>\n        <span>Analytics</span>\n      </li>\n      <li class=\"text s-16 fw-600\" nz-menu-item>\n        <svg-icon\n          src=\"/assets/icon/manage-setting-ico.svg\"\n          class=\"icon s-12\"></svg-icon>\n        <span>Settings</span>\n      </li>\n      <li class=\"text s-16 fw-600\" nz-menu-item>\n        <svg-icon\n          src=\"/assets/icon/report-ico.svg\"\n          class=\"icon s-12\"></svg-icon>\n        <span>Documentation</span>\n      </li>\n    </ul>\n    <div>\n      <ul nz-menu nzMode=\"inline\" class=\"sidebar-menu sidebar-menu-bottom\">\n        <li class=\"text s-16 fw-600\" nz-menu-item routerLink=\"/auth/login\">\n          <svg-icon\n            src=\"/assets/icon/logout-ico.svg\"\n            class=\"icon s-12\"></svg-icon>\n          <span>Logout</span>\n        </li>\n      </ul>\n\n      <div class=\"user-info-card\">\n        <div><img src=\"/assets/images/avatar.png\" alt=\"user-avatar\" /></div>\n        <div class=\"user-info text s-14\">\n          <div class=\"user-name fw-600\">John Doe</div>\n          <div class=\"user-designation fw-400\">VEC AutismPro</div>\n        </div>\n        <div class=\"notification\">\n          <svg-icon\n            src=\"/assets/icon/icon-notification-gray.svg\"\n            class=\"icon s-24\"></svg-icon>\n        </div>\n      </div>\n    </div>\n  </div>\n</nz-sider>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-6d8ec7aac731ce99c9af6d77991deeb3f9e426a595202aab1a527d7006c8a59fa50d496614a27a2a2c46f3bea5a8c7ca37cc3fe4f05c7529fd67657fa0fcaf84",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.routes.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { DashboardComponent } from './layouts/dashboard/dashboard.component';\nimport { AuthComponent } from './layouts/auth/auth.component';\n\nexport const routes: Routes = [\n  {\n    path: 'auth',\n    component: AuthComponent,\n    loadChildren: () =>\n      \"import('./routes/public.routes').then(m => m.publicRoutes)\",\n  },\n  {\n    path: 'dashboard',\n    component: DashboardComponent,\n    loadChildren: () => \"import('./routes/main.routes').then(m => m.mainRoutes)\",\n  },\n  { path: '', redirectTo: 'auth/login', pathMatch: 'full' }, // Default route\n  { path: '**', redirectTo: 'auth/login' }, // Wildcard route\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [\n    provideZoneChangeDetection({ eventCoalescing: true }),\n    provideRouter(routes),\n    provideHttpClient(),\n    provideAngularSvgIcon(),\n    provideAnimations(),\n  ],\n}"
+            },
+            {
+                "name": "AppInitializerProvider",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/services/app-initializer.service.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  provide: APP_INITIALIZER,\n  useFactory: (themeService: ThemeService) => () => {\n    return themeService.loadTheme();\n  },\n  deps: [ThemeService],\n  multi: true,\n}"
+            },
+            {
+                "name": "mainRoutes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/routes/main.routes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Route[]",
+                "defaultValue": "[\n  {\n    path: '',\n    component: HomeComponent,\n    title: 'Home',\n  },\n  {\n    path: 'analytics',\n    component: AnalyticsComponent,\n    title: 'Analytics',\n  },\n]"
+            },
+            {
+                "name": "publicRoutes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/routes/public.routes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Route[]",
+                "defaultValue": "[\n  {\n    path: 'login',\n    component: LoginComponent,\n    title: 'Login',\n  },\n  {\n    path: 'forgot-password',\n    component: ForgotPasswordComponent,\n    title: 'Forgot Password',\n  },\n]"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [
+            {
+                "name": "ThemeType",
+                "childs": [
+                    {
+                        "name": "Dark",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "dark"
+                    },
+                    {
+                        "name": "Default",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "default"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/services/theme.service.ts"
+            }
+        ],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [\n    provideZoneChangeDetection({ eventCoalescing: true }),\n    provideRouter(routes),\n    provideHttpClient(),\n    provideAngularSvgIcon(),\n    provideAnimations(),\n  ],\n}"
+                }
+            ],
+            "src/services/app-initializer.service.ts": [
+                {
+                    "name": "AppInitializerProvider",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/services/app-initializer.service.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  provide: APP_INITIALIZER,\n  useFactory: (themeService: ThemeService) => () => {\n    return themeService.loadTheme();\n  },\n  deps: [ThemeService],\n  multi: true,\n}"
+                }
+            ],
+            "src/app/routes/main.routes.ts": [
+                {
+                    "name": "mainRoutes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/routes/main.routes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Route[]",
+                    "defaultValue": "[\n  {\n    path: '',\n    component: HomeComponent,\n    title: 'Home',\n  },\n  {\n    path: 'analytics',\n    component: AnalyticsComponent,\n    title: 'Analytics',\n  },\n]"
+                }
+            ],
+            "src/app/routes/public.routes.ts": [
+                {
+                    "name": "publicRoutes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/routes/public.routes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Route[]",
+                    "defaultValue": "[\n  {\n    path: 'login',\n    component: LoginComponent,\n    title: 'Login',\n  },\n  {\n    path: 'forgot-password',\n    component: ForgotPasswordComponent,\n    title: 'Forgot Password',\n  },\n]"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {
+            "src/services/theme.service.ts": [
+                {
+                    "name": "ThemeType",
+                    "childs": [
+                        {
+                            "name": "Dark",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "dark"
+                        },
+                        {
+                            "name": "Default",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "default"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/services/theme.service.ts"
+                }
+            ]
+        },
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 1,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/sidebar/sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 16,
+                "coverageCount": "1/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/stories/user.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layouts/auth/auth.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AuthComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layouts/dashboard/dashboard.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DashboardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/analytics/analytics.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AnalyticsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/forgot-password/forgot-password.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ForgotPasswordComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/login/login.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoginComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/routes/main.routes.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mainRoutes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/routes/public.routes.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "publicRoutes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/services/app-initializer.service.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AppInitializerProvider",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/services/theme.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ThemeService",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            }
+        ]
+    }
+}

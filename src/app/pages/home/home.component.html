@@ -1,0 +1,41 @@
+<div class="home-container">
+  <div class="home-header text-center">
+    <h1 class="title s-36 fw-600">Angular Boilerplate</h1>
+    <p class="text s-16 fw-400">
+      A starter template for building modern Angular applications.
+    </p>
+  </div>
+
+  <div class="logo-wrapper">
+    <img src="/assets/images/ng-zorro.png" alt="logo" class="logo" />
+    <img src="/assets/images/sass.png" alt="logo" class="logo" width="200" />
+  </div>
+
+  <div class="home-footer text-center mb-20">
+    <p class="text s-14 fw-400">
+      Built with
+      <a href="https://ng.ant.design/docs/introduce/en" target="_blank">
+        <span class="fw-600">NG-ZORRO</span>
+      </a>
+      and
+      <a href="https://sass-lang.com/" target="_blank">
+        <span class="fw-600">SASS</span> </a
+      >.
+    </p>
+  </div>
+
+  <div class="button-container">
+    <button
+      nz-button
+      [nzType]="currentTheme === 'dark' ? 'primary' : 'default'"
+      (click)="setTheme('dark')">
+      Dark
+    </button>
+    <button
+      nz-button
+      [nzType]="currentTheme === 'dark' ? 'default' : 'primary'"
+      (click)="setTheme('default')">
+      Light
+    </button>
+  </div>
+</div>

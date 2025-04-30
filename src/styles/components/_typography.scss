@@ -1,0 +1,57 @@
+// Heading size css
+.title {
+  color: rgb(var(--gray-900));
+  font-weight: 600;
+
+  @each $size,
+    $line-height
+      in (12: 18px, 18: 28px, 24: 32px, 30: 38px, 36: 44px, 48: 60px, 60: 72px)
+  {
+    &.s-#{$size} {
+      font-size: #{$size}px;
+      line-height: #{$line-height};
+    }
+  }
+}
+
+// Content text size css
+.text {
+  color: rgb(var(--gray-900));
+  margin-bottom: 0;
+
+  @each $size,
+    $line-height
+      in (
+        12: 18px,
+        14: 20px,
+        16: 24px,
+        18: 28px,
+        20: 30px,
+        24: 32px,
+        30: 38px,
+        36: 44px,
+        48: 60px,
+        60: 72px,
+        72: 90px
+      )
+  {
+    &.s-#{$size} {
+      font-size: #{$size}px;
+      line-height: #{$line-height};
+    }
+  }
+}
+
+// Font weight css
+.fw {
+  @each $weight in (300, 400, 500, 600, 700) {
+    &-#{$weight} {
+      font-weight: #{$weight};
+    }
+  }
+}
+
+// Center text css
+.text-center {
+  text-align: center;
+}

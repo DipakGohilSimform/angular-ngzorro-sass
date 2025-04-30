@@ -1,0 +1,15 @@
+.icon {
+  display: inline-flex;
+  &.s-24 {
+    font-size: 24px;
+  }
+  &.s-20 {
+    font-size: 20px;
+  }
+  &.s-16 {
+    font-size: 16px;
+  }
+  &.s-12 {
+    font-size: 12px;
+  }
+}
