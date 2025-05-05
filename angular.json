@@ -130,6 +130,7 @@
             "compodocArgs": ["-e", "json", "-d", "."],
             "port": 6006,
             "styles": [
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/styles/theme/variables.css",
               "src/styles/styles.scss"
             ]
