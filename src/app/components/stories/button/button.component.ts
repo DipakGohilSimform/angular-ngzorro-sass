@@ -16,10 +16,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
       {{ label }}
     </button>
   `,
-  styleUrls: ['./button.css'],
 })
 export class ButtonComponent {
-  /** Is this the principal call to action on the page? */
   @Input()
   primary = false;
 

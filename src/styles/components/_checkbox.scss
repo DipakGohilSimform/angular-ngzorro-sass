@@ -44,5 +44,11 @@
     .ant-checkbox-checked::after {
       border-color: rgb(var(--brand-600));
     }
+    &:has(.ant-checkbox-disabled) {
+      cursor: not-allowed;
+      span {
+        color: rgb(var(--gray-400));
+      }
+    }
   }
 }
