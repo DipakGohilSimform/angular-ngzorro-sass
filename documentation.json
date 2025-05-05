@@ -427,7 +427,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d2cb4f3d89f818722d951f2db09470e634315599d309e22e7efa0bdc1708e422338377f75c7a2e8759eb7d183b36eb115e5aa02817491f464dc7a6b1b73b25c5",
+            "id": "component-ButtonComponent-1d9e9799e26cd68bbe863b74eca92079f0fa712fe79558ac2e58eadfc21c3d80347cbb5c38aee334efefa6d613a3e484bbbc48f640d75b82fae56adea279af26",
             "file": "src/app/components/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -439,7 +439,7 @@
                 "./button.css"
             ],
             "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"doClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\">\n   {{ label }}\n </button>",
+            "template": "<button\n  nz-button\n  [nzType]=\"primary ? 'primary' : 'default'\"\n  [nzSize]=\"getNzSize()\"\n  [style.background-color]=\"backgroundColor\"\n  (click)=\"doClick.emit($event)\">\n  {{ label }}\n</button>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -448,7 +448,9 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "rawdescription": "\nWhat background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 28,
                     "type": "string",
                     "decorators": []
                 },
@@ -459,16 +461,16 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 637,
-                            "end": 650,
+                            "pos": 904,
+                            "end": 917,
                             "kind": 327,
                             "id": 0,
                             "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "tagName": {
-                                "pos": 638,
-                                "end": 646,
+                                "pos": 905,
+                                "end": 913,
                                 "kind": 80,
                                 "id": 0,
                                 "flags": 16842752,
@@ -480,7 +482,7 @@
                     ],
                     "rawdescription": "\n\nButton contents\n\n",
                     "description": "<p>Button contents</p>\n",
-                    "line": 33,
+                    "line": 40,
                     "type": "string",
                     "decorators": []
                 },
@@ -489,7 +491,9 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "rawdescription": "\nIs this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 24,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -498,7 +502,9 @@
                     "defaultValue": "'medium'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "rawdescription": "\nHow large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 32,
                     "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
@@ -509,12 +515,25 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "rawdescription": "\nOptional click handler",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 44,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "getNzSize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "\"large\" | \"default\" | \"small\"",
+                    "typeParameters": [],
+                    "line": 47,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -524,12 +543,16 @@
                 {
                     "name": "CommonModule",
                     "type": "module"
+                },
+                {
+                    "name": "NzButtonModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'app-storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n    type=\"button\"\n    (click)=\"doClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\">\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  @Input()\n  primary = false;\n\n  @Input()\n  backgroundColor?: string;\n\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  @Output()\n  doClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary\n      ? 'storybook-button--primary'\n      : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { NzButtonModule } from 'ng-zorro-antd/button';\n\n@Component({\n  selector: 'app-storybook-button',\n  standalone: true,\n  imports: [CommonModule, NzButtonModule],\n  template: `\n    <button\n      nz-button\n      [nzType]=\"primary ? 'primary' : 'default'\"\n      [nzSize]=\"getNzSize()\"\n      [style.background-color]=\"backgroundColor\"\n      (click)=\"doClick.emit($event)\">\n      {{ label }}\n    </button>\n  `,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  doClick = new EventEmitter<Event>();\n\n  // Convert size format to NG-Zorro's size values\n  getNzSize(): 'large' | 'default' | 'small' {\n    switch (this.size) {\n      case 'small':\n        return 'small';\n      case 'large':\n        return 'large';\n      default:\n        return 'default';\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -538,18 +561,7 @@
                 }
             ],
             "stylesData": "",
-            "extends": [],
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 38
-                    }
-                }
-            }
+            "extends": []
         },
         {
             "name": "DashboardComponent",
@@ -1305,7 +1317,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 1,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -1350,9 +1362,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
-                "coveragePercent": 16,
-                "coverageCount": "1/6",
-                "status": "low"
+                "coveragePercent": 71,
+                "coverageCount": "5/7",
+                "status": "good"
             },
             {
                 "filePath": "src/app/components/stories/user.ts",
